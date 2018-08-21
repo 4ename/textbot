@@ -690,6 +690,7 @@ var tp=function(x,y){OWOP.emit(6666694,x,y)}; //short teleport
 function addLetter(n,d){
 	eval("letters["+n.charCodeAt(0)+"]=d") //eval function will set the decimal character number in "letters" to the data of the letter
 }
+yhold=-4
 function placeLetter(n){
 	for (i=0;i<=letters[n].length-1;i++){ 
 		for (j=0;j<=4;j++){ //same as above, but i is j
@@ -697,7 +698,7 @@ function placeLetter(n){
 			xah++;
 			
 		}
-	}	tp(Math.floor(OWOP.camera.x+((screen.availWidth/2)/OWOP.camera.zoom)+6),Math.floor(OWOP.camera.y+((screen.availHeight/2)/OWOP.camera.zoom))-4)
+	}	tp(Math.floor(OWOP.camera.x+((screen.availWidth/2)/OWOP.camera.zoom)+6),Math.floor(OWOP.camera.y+((screen.availHeight/2)/OWOP.camera.zoom))+yHold)
 }
                         
                          

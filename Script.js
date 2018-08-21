@@ -1,7 +1,6 @@
 /*var Owop3=open(location)
 var OwopTwo=open(location)
-var catdogmeowwoojffish=setInterval(function(){OwopTwo.OWOP.emit(6666694,OWOP.mouse.tileX,OWOP.mouse.tileY);},500)
-var catdogmeowwooffish=setInterval(function(){Owop3.OWOP.emit(6666694,OWOP.mouse.tileX,OWOP.mouse.tileY);},500)
+
 
     setTimeout(function() {
         if (OWOP) {

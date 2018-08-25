@@ -1,6 +1,4 @@
-/*var Owop3=open(location)
-var OwopTwo=open(location)
-
+/*
 
     setTimeout(function() {
         if (OWOP) {
@@ -682,7 +680,9 @@ function sp(x,y,u,h){
 	if (h==1){
 
 		OWOP.world.setPixel(x,y,OWOP.player.selectedColor,u);} else if (h==0){
-		OWOP.world.setPixel(x,y,[255,255,255],u);
+		OWOP.world.setPixel(x,y,[255,255,255],u);} else if (h==-1){
+		OWOP.world.setPixel(x,y,[255,0,0],u);} else if (h==-2){
+		OWOP.world.setPixel(x,y,[0,0,0],u);
 	}
 }
 var wasp=function(x,y,h){sp(OWOP.mouse.tileX+x,OWOP.mouse.tileY+y,false,h)}
@@ -690,27 +690,28 @@ var tp=function(x,y){OWOP.emit(6666694,x,y)}; //short teleport
 function addLetter(n,d){
 	eval("letters["+n.charCodeAt(0)+"]=d") //eval function will set the decimal character number in "letters" to the data of the letter
 }
-yhold=-4
 function placeLetter(n){
 	for (i=0;i<=letters[n].length-1;i++){ 
-		for (j=0;j<=4;j++){ //same as above, but i is j
+		for (j=0;j<=letters[n][i].length;j++){ //same as above, but i is j
 			wasp(j,i,letters[n][i][j])
 			xah++;
 			
 		}
-	}	tp(Math.floor(OWOP.camera.x+((screen.availWidth/2)/OWOP.camera.zoom)+6),Math.floor(OWOP.camera.y+((screen.availHeight/2)/OWOP.camera.zoom))+yHold)
+	}	tp(Math.floor(OWOP.camera.x+((screen.availWidth/2)/OWOP.camera.zoom)+6),Math.floor(OWOP.camera.y+((screen.availHeight/2)/OWOP.camera.zoom))-4)
 }
                         
                          
                          
 //The actual letters
 addLetter(" ",[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]])// //
+addLetter("þ",[[-2,-2,-2,-2,-2,-2,-2,-2,-2],[-2,-1,-1,-1,-1,-1,-1,-1,-2],[-2,-1,0,0,0,0,-1,-1,-2],[-2,-1,0,-1,-1,-1,0,-1,-2],[-2,-1,0,0,0,0,-1,-1,-2],[-2,-1,0,-1,-1,-1,0,-1,-2],[-2,-1,0,0,0,0,-1,-1,-2],[-2,-2,-2,-2,-2,-2,-2,-2,-2]]) //b button
 addLetter("!",[[0,0,1,0,0],[0,0,1,0,0],[0,0,1,0,0],[0,0,1,0,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,1,0,0]])//!
 addLetter("$",[[0,0,1,0,0],[0,1,1,1,0],[1,0,1,0,0],[0,1,1,1,0],[0,0,1,0,1],[0,1,1,1,0][0,0,1,0,0]])//$
 addLetter("%",[[1,1,0,0,1],[1,1,0,0,1],[0,0,0,1,0],[0,0,1,0,0],[0,0,1,0,0],[0,1,0,1,1],[1,0,0,1,1]])//%
 addLetter("\'",[[0,0,0,0,0],[0,0,1,0,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]])//'
 addLetter(",",[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[1,1,0,0,0],[1,1,0,0,0],[0,1,0,0,0],[1,0,0,0,0]])//,
 addLetter("-",[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[1,1,1,1,1],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]])//-
+addLetter("?",[[0,1,1,1,0],[1,0,0,0,1],[0,0,0,0,1],[0,0,0,1,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,1,0,0]])//?
 addLetter(".",[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[1,0,0,0,0]])//.
 addLetter("#",[[0,1,0,1,0],[0,1,0,1,0],[1,1,1,1,1],[0,1,0,1,0],[1,1,1,1,1],[0,1,0,1,0],[0,1,0,1,0]])//#
 addLetter("0",[[0,1,1,1,0],[1,0,0,0,1],[1,1,0,0,1],[1,0,1,0,1],[1,0,0,1,1],[1,0,0,0,1],[0,1,1,1,0]])//0
@@ -793,7 +794,7 @@ function encryptString(s,z){//does NOT encrypt strings with a password.
 	str=s;
 	l=0
 		var cat=setInterval(function(){if (l<=str.length){placeLetter(str.charCodeAt(l));var dog=str.length-l-1;console.log("Chars remaining: "+dog.toString());l++}},z)
-setTimeout(function(){clearInterval(cat);},str.length*(z+1))
+setTimeout(function(){clearInterval(cat);},str.length*(z+30))
     
 }console.log("%".charCodeAt(0))
 //encryptString("That token is huge...",1000)

@@ -794,7 +794,7 @@ function encryptString(s,z){//does NOT encrypt strings with a password.
 	str=s;
 	l=0
 		var cat=setInterval(function(){if (l<=str.length){placeLetter(str.charCodeAt(l));var dog=str.length-l-1;console.log("Chars remaining: "+dog.toString());l++}},z)
-setTimeout(function(){clearInterval(cat);},str.length*(z+30))
+setTimeout(function(){clearInterval(cat);document.getElementById('dev-chat-messages').innerHTML="";},str.length*(z+30))
     
 }console.log("%".charCodeAt(0))
 //encryptString("That token is huge...",1000)

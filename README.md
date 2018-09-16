@@ -1,4 +1,4 @@
-Texter bot for OWOP (Fuck The Developer Of Web Displays)
+Texter bot for OWOP (Fuck The Developer Of Web Displays, and also Unreal Engine is not actual coding)
 Usage: encryptString(text,delay) (what you want to type, speed of typing)*Lower delays may not fly with the OWOP server, as these characters are 5x7.*
 How it works: Each "letter" has 35 "h" values, which determine if to erase or place a pixel. Some lowercase letters have 49 or 56 "h" values.
 In the "wasp"(NOT the insect that stings) function, it will run the "sp" function, with variable 3 ("u") being set to false.
